@@ -1,78 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Yalcinkaya - Personal Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        .bg-image {
-            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <link rel="icon" href="data:,">
+  <title>Ali Yalcin Kaya</title>
+  <link rel="stylesheet" href="site.css">
 </head>
-<body class="min-h-screen bg-image flex items-center justify-center p-4">
-    <div class="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg shadow-xl w-full max-w-4xl overflow-hidden">
-        <div class="flex flex-col md:flex-row">
-            <div class="md:w-1/3 p-6 flex items-center justify-center bg-gray-50 bg-opacity-75">
-                <div class="w-48 h-48 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-                    <img src="assets/profile2.jpg" alt="Profile Photo" class="w-full h-full object-cover" />
-                </div>
-            </div>
-            <div class="bg-white md:w-2/3 p-6">
-                <h1 class="text-2xl font-bold text-center md:text-left mb-2">Hello visitor!</h1>
-                <p class="text-center md:text-left text-gray-600 mb-6">Welcome to my personal website</p>
-                
-                <div class="mb-6">
-                    <h2 class="text-lg font-semibold mb-3">Work</h2>
-                    <div class="space-y-2">
-                        <a href="https://growthanalyticsmarketing.com" target="_blank" rel="noopener noreferrer" class="flex items-center w-full py-2 px-4 border rounded hover:bg-gray-100 transition-colors">
-                            <img src="assets/gam-logo.png" alt="Growth Analytics Marketing Logo" class="w-8 h-8 mr-2 object-contain" />
-                            <span>Growth Analytics Marketing</span>
-                        </a>
-                        <a href="https://vendodata.com" target="_blank" rel="noopener noreferrer" class="flex items-center w-full py-2 px-4 border rounded hover:bg-gray-100 transition-colors">
-                            <img src="assets/vendo-logo.png" alt="Vendo Logo" class="w-8 h-8 mr-2 object-contain" />
-                            <span>Vendo</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h2 class="text-lg font-semibold mb-3">Social</h2>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://www.linkedin.com/in/aliyalcinkaya/" target="_blank" rel="noopener noreferrer" class="p-2 border rounded-full hover:bg-gray-100 transition-colors">
-                            <i class="ri-linkedin-fill text-xl"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
-                        <a href="https://www.facebook.com/yalciiiiiiin" target="_blank" rel="noopener noreferrer" class="p-2 border rounded-full hover:bg-gray-100 transition-colors">
-                            <i class="ri-facebook-fill text-xl"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                        <a href="https://x.com/AliYalcinKaya" target="_blank" rel="noopener noreferrer" class="p-2 border rounded-full hover:bg-gray-100 transition-colors">
-                            <i class="ri-twitter-fill text-xl"></i>
-                            <span class="sr-only">X (formerly Twitter)</span>
-                        </a>
-                        <a href="https://open.spotify.com/playlist/2HgaO04SS7xqRaGXuTA6nP?si=13642996e6884d44" target="_blank" rel="noopener noreferrer" class="p-2 border rounded-full hover:bg-gray-100 transition-colors">
-                            <i class="ri-spotify-fill text-xl"></i>
-                            <span class="sr-only">Spotify</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-gray-50 bg-opacity-75 px-6 py-4 text-center text-sm text-gray-500">
-            © <span id="current-year"></span> Ali Yalcin Kaya. All rights reserved.
-        </div>
+<body>
+  <main aria-label="Visuals">
+    <div id="stage"></div>
+  </main>
+
+  <header class="site-header">
+    <h1 class="site-name">Ali Yalcin Kaya</h1>
+    <a class="header-link" href="about.html">About</a>
+  </header>
+
+  <footer class="player" aria-label="Media player">
+    <div class="track">
+      <img src="assets/spore/8/poster.jpg" width="56" height="56" alt="">
+      <div>
+        <p id="title" aria-live="polite">Maze - Vocoder Vocals</p>
+      </div>
     </div>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <section class="transport" aria-label="Playback">
+      <audio preload="metadata"></audio>
+      <div class="playback-buttons">
+        <button class="icon-button" id="prev" aria-label="Previous track"><span class="skip-icon back"></span></button>
+        <button class="icon-button" id="play" aria-label="Play"><span class="play-icon"></span></button>
+        <button class="icon-button" id="next" aria-label="Next track"><span class="skip-icon"></span></button>
+      </div>
+      <div class="timeline">
+        <span id="elapsed">0:00</span>
+        <input id="seek" type="range" min="0" max="0" step="0.1" value="0" aria-label="Seek" disabled>
+        <span id="duration">0:00</span>
+      </div>
+    </section>
+
+    <div class="player-actions">
+      <details class="playlist">
+        <summary>Playlist</summary>
+        <section class="playlist-panel" aria-labelledby="playlist-title">
+          <header class="playlist-header">
+            <h2 id="playlist-title">Playlist</h2>
+            <button id="close-playlist" class="icon-button" aria-label="Close playlist">×</button>
+          </header>
+          <ul id="queue" class="song-list" aria-label="Songs"></ul>
+          <label class="pick">Add songs<input type="file" id="file" accept="audio/*" multiple></label>
+        </section>
+      </details>
+      <button id="like" class="icon-button like-button" aria-label="Like track" aria-pressed="false" title="Like track" hidden>
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.8 4.6a5.3 5.3 0 0 0-7.5 0L12 5.9l-1.3-1.3a5.3 5.3 0 1 0-7.5 7.5L12 21l8.8-8.9a5.3 5.3 0 0 0 0-7.5Z"/>
+        </svg>
+      </button>
+      <button class="icon-button fullscreen-button" id="expand" aria-label="Fullscreen" aria-pressed="false" title="Fullscreen" hidden>
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path class="expand-icon" d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/>
+          <path class="shrink-icon" d="M4 9h5V4m11 5h-5V4M9 20v-5H4m11 5v-5h5"/>
+        </svg>
+      </button>
+    </div>
+    <p id="playback-status" role="status"></p>
+    <small class="site-credit">© 2026 Ali Yalcin Kaya · Animations by <a href="https://spite.github.io/codevember-2026/">Jaume Sanchez Elias</a></small>
+  </footer>
+
+  <script type="module" src="player.js"></script>
+  <script type="module" src="visual-stage.js"></script>
 </body>
 </html>
